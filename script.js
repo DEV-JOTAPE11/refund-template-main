@@ -46,7 +46,9 @@ form.onsubmit = (event) => {
 
 function expenseAdd(newExpense) {
     try {
-        throw new Error("Função não implementada")
+        // Cria o elemento para adicionar o item (li) na lista (ul).
+        const expenseItem = document.createElement('li')
+        expenseItem.classList.add('expense')
     } catch (error) {
         alert("Erro ao atualizar a lista de despesas.")
         console.error("Erro ao adicionar despesa:", error)
