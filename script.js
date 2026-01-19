@@ -25,7 +25,30 @@ function formatCurrency(value) {
 
 } 
 
-
+//Captura o evento de submit do formulário
 form.onsubmit = (event) => {
+    // Impede o comportamento padrão de recarregamento da página
     event.preventDefault()
+
+    // Cria um novo objeto de despesa com os valores do formulário
+    const newExpense = {
+        id: new Date().getTime(),
+        expense: expense.value,
+        category_id: category.value,
+        category_name: category.options[category.selectedIndex].text,
+        amount: amount.value,
+        created_at: new Date(),
+    }
+
+    // Chama a função para adicionar o item na lista.
+    expenseAdd(newExpense)
+}
+
+function expenseAdd(newExpense) {
+    try {
+        throw new Error("Função não implementada")
+    } catch (error) {
+        alert("Erro ao atualizar a lista de despesas.")
+        console.error("Erro ao adicionar despesa:", error)
+    }
 }
