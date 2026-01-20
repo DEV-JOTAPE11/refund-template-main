@@ -150,3 +150,18 @@ function updateTotals() {
     alert("Erro ao atualizar os totais.");
   }
 }
+
+
+// Evento que captura o clique no ícone de remoção.
+expenseList.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-icon")) {
+        // Obtém o elemento pai (li) do ícone clicado.
+        const item = event.target.closest(".expense");
+
+        // Remove o item da lista.
+        item.remove();
+    }
+
+    // Atualiza os totais após a remoção.
+    updateTotals();
+});
